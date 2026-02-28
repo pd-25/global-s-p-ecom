@@ -1,0 +1,149 @@
+@use './variables' as *;
+
+.topBrandsWrapper {
+    .shortTitle {
+        @include respond-to(md) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .MuiButtonBase-root {
+            font-size: 16px;
+            font-weight: 500;
+            color: $colorBlack;
+            gap: 6px;
+            min-width: auto;
+            padding: 0;
+            width: auto;
+        }
+    }
+
+    .top-brands-swiper {
+        .topBrandsCard {
+            height: 100%;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            border: 1px solid transparent;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: -40%;
+                right: -10%;
+                width: 246px;
+                height: 246px;
+                border-radius: 100%;
+                padding: 10px;
+
+                @include respond-to(lg) {
+                    width: 186px;
+                    height: 186px;
+                    top: -30%;
+                }
+            }
+
+            .brandContent {
+                position: relative;
+                z-index: 1;
+
+                p {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 35px;
+                    min-width: 110px;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    letter-spacing: 1.4px;
+                    text-transform: uppercase;
+                    margin: 0;
+                }
+
+                .brandLogo {
+                    margin-top: 20px;
+                    line-height: 1;
+                }
+
+                h3 {
+                    font-size: 24px;
+                    line-height: 1.2;
+                    font-weight: 600;
+                    margin-top: 12px;
+                }
+            }
+
+            .brandImage {
+                position: relative;
+                z-index: 1;
+                flex: 1 1 150px;
+                text-align: right;
+            }
+
+            &--apple {
+                background-color: #313131;
+                border-color: #414141;
+
+                &::before {
+                    background-color: #404040;
+                    box-shadow: 0 0 0 1px #414141;
+                }
+
+                .brandContent {
+                    p {
+                        background-color: #494949;
+                        color: $colorWhite;
+                    }
+
+                    h3 {
+                        color: $colorWhite;
+                    }
+                }
+            }
+
+            &--realme {
+                background-color: #FFF3CC;
+                border-color: #F6DE8D;
+
+                &::before {
+                    background-color: #F6DE8D;
+                    box-shadow: 0 0 0 1px #F6DE8D;
+                }
+
+                .brandContent {
+                    p {
+                        background-color: #F6DE8D;
+                        color: #222222;
+                    }
+
+                    h3 {
+                        color: #222222;
+                    }
+                }
+            }
+
+            &--xiaomi {
+                background-color: #FFECDF;
+                border-color: #FFD1B0;
+
+                &::before {
+                    background-color: #FFD1B0;
+                    box-shadow: 0 0 0 1px #FFD1B0;
+                }
+
+                .brandContent {
+                    p {
+                        background-color: #FFD1B0;
+                        color: #222222;
+                    }
+
+                    h3 {
+                        color: #222222;
+                    }
+                }
+            }
+        }
+    }
+}
