@@ -1,3 +1,4 @@
+t
 # Next.js 16 Lead Generation Website - Folder Structure
 
 ## Project Overview
